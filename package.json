@@ -1,12 +1,12 @@
 {
-  "name": "isomorphic-env",
+  "name": "isomorphic-envs",
   "version": "0.1.0",
   "description": "Record environment variables used in your frontend app and set them on server",
   "main": "index.js",
   "scripts": {},
   "author": "Arseny Polkovsky <arseniy.polk@gmail.com>",
   "license": "MIT",
-  "repository": "git@github.com:aapolkovsky/isomorphic-env.git",
+  "repository": "git@github.com:aapolkovsky/isomorphic-envs.git",
   "dependencies": {
     "webpack-sources": "^1.1.0"
   },

@@ -5,12 +5,12 @@ const ConstDependency = require("webpack/lib/dependencies/ConstDependency");
 const ParserHelpers = require("webpack/lib/ParserHelpers");
 const NullFactory = require("webpack/lib/NullFactory");
 
-const PLUGIN_NAME = 'IsomorphicEnvWebpackPlugin';
+const PLUGIN_NAME = 'IsomorphicsEnvWebpackPlugin';
 const PROCESS_ENV_KEY = 'process.env';
 
 const DEFAULT_OPTIONS = {
-	filename: 'isomorphic-env.json',
-	variable: '__ISOMORPHIC_ENV__'
+	filename: 'isomorphic-envs.json',
+	variable: '__ISOMORPHIC_ENVS__'
 };
 
 // lodash-like pick function
@@ -33,7 +33,7 @@ function omit(object, keysToOmit) {
 	return result;
 }
 
-module.exports = class IsomorphicEnvWebpackPlugin {
+module.exports = class IsomorphicEnvsWebpackPlugin {
 	constructor(options) {
 		this.options = Object.assign({}, DEFAULT_OPTIONS, options)
 
