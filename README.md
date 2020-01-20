@@ -16,19 +16,6 @@ const IsomorphicEnvsWebpackPlugin = require('isomorphic-envs/webpack-plugin');
 
 ### Client
 
-#### Isomorphic code
-
-```js
-import axios from 'axios';
-
-axios
-  .get(process.env.OFFERS_API_ENDPOINT, {
-    timeout: process.env.REQUEST_TIMEOUT
-  })
-  .then(r => r.json())
-  .then(console.log);
-```
-
 #### webpack.config.client.js
 
 ```js
@@ -45,6 +32,22 @@ module.exports = {
   ]
 };
 ```
+
+#### Isomorphic code
+
+`src/my.js`
+
+```js
+import axios from 'axios';
+
+axios
+  .get(process.env.OFFERS_API_ENDPOINT, {
+    timeout: process.env.REQUEST_TIMEOUT
+  })
+  .then(r => r.json())
+  .then(console.log);
+```
+
 #### Output
 
 `dist/isomorphic-envs.json`
@@ -57,6 +60,19 @@ module.exports = {
     "REQUEST_TIMEOUT"
   ]
 }
+```
+
+`src/my.js`
+
+```js
+import axios from 'axios';
+
+axios
+  .get(__ISOMORPHIC_ENVS__.OFFERS_API_ENDPOINT, {
+    timeout:__ISOMORPHIC_ENVS__.REQUEST_TIMEOUT
+  })
+  .then(r => r.json())
+  .then(console.log);
 ```
 
 ### Server
